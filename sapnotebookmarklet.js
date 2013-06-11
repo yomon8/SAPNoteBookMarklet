@@ -15,9 +15,7 @@
 			paddingTop: '15em'
 		}).attr('id', '___overlay').text('Please input SAP note number...').appendTo('body');
 		note_num = window.prompt('Please input SAP note number...');
-		if(!note_num) {
-			noteurl = 'http://service.sap.com/notes';
-		} else if(!/^[0-9]{1,10}$/.test(note_num)) {
+		if(!note_num || !/^[0-9]{1,10}$/.test(note_num)) {
 			alert('Please input valid number');
 			$('#___overlay').remove();
 			return false;
